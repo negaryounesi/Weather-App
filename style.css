@@ -1,0 +1,174 @@
+:root{
+    --bg-main:#0a1f44;--text_light: #fff;
+    --text_med: #53627c;
+    --text_dark: #1e2432;
+    --red: #ff1e42;
+    --darkred: #c3112d;
+    --orange: #ff8c00;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+button{
+    cursor:pointer;
+}
+button,input{
+    background: none;
+    outline: none;
+    color:inherit;
+    border:none;
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+ul{
+    list-style-type: none;
+}
+body{
+    background-color: var(--bg-main);
+    color:var(--text_light);
+    padding: 70px;
+    width: 100%;
+    height: 100vh;
+}
+
+/*section #1
+---------------------------------------*/
+.heading{
+    color: var(--text_light);
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+form{
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+.inputText input{
+    font-size: 2rem;
+    height: 40px;
+    padding:5px 5px 10px;
+    border-bottom: 1px solid;
+
+}
+.inputText input::placeholder{
+color:currentColor;
+}
+.submitBtn{
+    width: 100%;
+}
+.submitBtn button{
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 15px 20px;
+    margin-left: 15px;
+    border-radius: 5px;
+    background: var(--red);
+    transition: 0.3s ease-in-out;
+    margin-top: 1%;
+    
+
+}
+.submitBtn button:hover{
+    background: var(--darkred);
+}
+.msg{
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 1%;
+    
+}
+.ajax-section{
+    margin: 70px 0px 20px;
+}
+.weatherCards .cities{
+    display: grid;
+    grid-gap: 32px 20px;
+    grid-template-columns: repeat(4,1fr);
+}
+.ajax-section .city {
+    position: relative;
+    padding: 40px 10%;
+    border-radius: 20px;
+    background: var(--text_light);
+    color: var(--text_med);
+    box-shadow: 8px 8px 10px rgba(179, 176, 176, 0.5); 
+
+  }
+  figcaption{
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+   
+  .ajax-section .city-temp {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--text_dark);
+  }
+  .ajax-section .city-icon {
+    margin-top: 10px;
+    width: 120px;
+    height: 100px;
+    
+  }
+
+/* breakPoints
+---------------------------------*/
+@media screen and (max-width:1000px){
+    body{
+        padding: 20px;
+    }
+    .ajax-section .cities{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (max-width:700px) {
+      .heading,.ajax-section .city-temp {
+      font-size: 3rem;
+      }
+      .ajax-section{
+        margin-top: 20px;
+      }
+      form{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      form input,.submitBtn button{
+        width: 100%;
+        margin-left: 0;
+      }
+      .submitBtn button{
+        margin: 20px 0 0 0;
+
+      }
+       
+    form .msg {
+        margin-top: 10px;
+      }
+      .ajax-section .cities{
+        grid-template-columns: repeat(2,1fr);
+      }
+      
+     
+}
+@media  screen and (max-width:500px) {
+    body{
+        padding: 15px;
+    }
+    .ajax-section .cities{
+    grid-template-columns: repeat(1,1fr);
+    }
+}
